@@ -1,2 +1,3 @@
-# quakemix
-Quantum Kernel Mixtures Python library
+# Quantum Kernel Mixtures
+
+Quantum kernel mixtures provide a simpler yet effective mechanism for representing joint probability distributions of both continuous and discrete random variables. The framework allows for the construction of differentiable models for density estimation, inference, and sampling, enabling integration into end-to-end deep neural models. In doing so, we provide a versatile representation of marginal and joint probability distributions that allows us to develop a differentiable, compositional, and reversible inference procedure that covers a wide range of machine learning tasks, including density estimation, discriminative learning, and generative modeling.
