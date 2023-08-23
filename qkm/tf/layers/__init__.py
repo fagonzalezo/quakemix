@@ -4,3 +4,4 @@ from .cosine_kernel_layer import *
 from .qkm_proj_layer import *
 from .qkm_layer import *
 from .rbf_kernel_layer import *
+from .mem_qkm_layer import *
