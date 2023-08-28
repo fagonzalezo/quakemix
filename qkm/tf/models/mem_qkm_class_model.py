@@ -35,10 +35,11 @@ class MemQKMClassModel(tf.keras.Model):
         return probs
 
     def create_index(self, samples_x, samples_y):
-        self.samples_x = self.encoder(samples_x)
-        self.samples_y = tf.constant(samples_y, tf.float32)
-        self.index = faiss.IndexFlatL2(self.encoded_size)
-        self.index.add(self.samples_x)
+        with tf.device('/cpu:0'):
+            self.samples_x = tf.constant(self.encoder.predict(samples_x), tf.float32)
+            self.samples_y = tf.constant(samples_y, tf.float32)
+            self.index = faiss.IndexFlatL2(self.encoded_size)
+            self.index.add(self.samples_x)
 
     def create_train_ds(self, batch_size):
         def tf_search(x, y):
